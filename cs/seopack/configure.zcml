@@ -13,4 +13,13 @@
       permission="zope2.View"
       />
 
+  <browser:viewlet
+      for="*"
+      name="cs.seopack.canonical"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"      
+      template="canonical.pt"
+      class=".canonical.CanonicalViewlet"
+      permission="zope2.View"
+      />
+
 </configure>
