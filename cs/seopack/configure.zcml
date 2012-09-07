@@ -4,6 +4,11 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="cs.seopack">
 
+  <include package="z3c.jbot" file="meta.zcml" />
+
+  <browser:jbot
+      directory="overrides" />
+
   <browser:viewlet
       for="*"
       name="cs.seopack.batch"
