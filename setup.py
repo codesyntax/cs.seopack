@@ -26,6 +26,7 @@ setup(name='cs.seopack',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'z3c.jbot',
       ],
       entry_points="""
       # -*- Entry points: -*-
