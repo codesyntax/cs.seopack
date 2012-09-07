@@ -1,8 +1,16 @@
 from zope.component import getMultiAdapter
 from Acquisition import aq_inner
 from plone.app.layout.viewlets import ViewletBase
+from Products.Five.browser import BrowserView
 
 class CanonicalViewlet(ViewletBase):
+
+    def canonical_url(self):
+        context = aq_inner(self.context)
+        view = getMultiAdapter((context, self.request), name="seopack_canonical_url")
+        return view.canonical_url()
+
+class CanonicalView(BrowserView):
 
     @property
     def pcs(self):
@@ -31,3 +39,6 @@ class CanonicalViewlet(ViewletBase):
                 url = url + '?' + qs
         
         return url
+
+    def __call__(self, *args, **kwargs):
+        return self.canonical_url()

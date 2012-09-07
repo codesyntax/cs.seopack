@@ -9,6 +9,13 @@
   <browser:jbot
       directory="overrides" />
 
+  <browser:page
+      for="*"
+      name="seopack_canonical_url"
+      class=".canonical.CanonicalView"
+      permission="zope2.View"
+    />
+
   <browser:viewlet
       for="*"
       name="cs.seopack.batch"
