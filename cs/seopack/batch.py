@@ -12,5 +12,7 @@ class BatchNoIndex(ViewletBase):
             return b_start != 0
         except ValueError:
             return False
+        except TypeError:
+            return False
 
         
