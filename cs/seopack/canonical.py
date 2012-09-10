@@ -43,19 +43,7 @@ class CanonicalView(BrowserView):
 
     def batch_url(self):
         canonical_url = self.canonical_url()
-        parsed_url = urlparse.urlparse(canonical_url)
-        query = parsed_url.query
-        parsed_query = urlparse.parse_qs(query)
-        if 'b_start' in parsed_query.keys():
-            parsed_query.pop('b_start')
-
-        if 'b_start:int' in parsed_query.keys():
-            parsed_query.pop('b_start:int')
-
-        query_items = [(k, ','.join(v)) for k,v in parsed_query.items()]
-        query = '&'.join(['%s=%s' % (k,v) for k,v in query_items])
-        new_parsed_url = parsed_url[:4] + (query, ) + parsed_url[5:]        
-        return urlparse.urlunparse(new_parsed_url)
+        return canonical_url.split('?')[0]
 
     def __call__(self, *args, **kwargs):
         return self.canonical_url()
