@@ -17,9 +17,14 @@ template with a tal:define="batch_base_url YOUR_BASE_URL" tales expression.
                  batchformkeys batchformkeys|nothing;
                  batchlinkparams python:batchformkeys and dict([(key, request.form[key]) for key in batchformkeys if key in request]) or request.form;
                  mq python:modules['ZTUtils'].make_query;
-                 url batch_base_url | context/@@seopack_canonical_url | request/ACTUAL_URL;
+                 url batch_base_url | context/@@seopack_batch_url | request/ACTUAL_URL;
                  currentpage batch/pagenumber;"
      tal:condition="python: batch.next or  batch.previous">
+
+     <strong tal:content="batch_base_url|nothing" />
+     <strong tal:content="context/@@seopack_batch_url" />
+     <strong tal:content="request/ACTUAL_URL" />
+     <strong tal:content="url" />
 
     <span class="previous"
       tal:define="p batch/previous | nothing"

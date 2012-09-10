@@ -16,6 +16,14 @@
       permission="zope2.View"
     />
 
+  <browser:page
+      for="*"
+      name="seopack_batch_url"
+      class=".canonical.CanonicalBatchView"
+      permission="zope2.View"      
+    />
+
+
   <browser:viewlet
       for="*"
       name="cs.seopack.batch"
