@@ -1,4 +1,3 @@
-
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
@@ -20,11 +19,6 @@ template with a tal:define="batch_base_url YOUR_BASE_URL" tales expression.
                  url batch_base_url | context/@@seopack_batch_url | request/ACTUAL_URL;
                  currentpage batch/pagenumber;"
      tal:condition="python: batch.next or  batch.previous">
-
-     <strong tal:content="batch_base_url|nothing" />
-     <strong tal:content="context/@@seopack_batch_url" />
-     <strong tal:content="request/ACTUAL_URL" />
-     <strong tal:content="url" />
 
     <span class="previous"
       tal:define="p batch/previous | nothing"

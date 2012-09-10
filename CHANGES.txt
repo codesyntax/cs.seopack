@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0.2.1 (2012/09/10)
+-----------------------
+
+- Brown bag release: Remove debugging output from template. 
+  [erral]
+
 1.0.2 (2012/09/10)
 --------------------
 
