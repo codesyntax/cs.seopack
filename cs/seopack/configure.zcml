@@ -2,6 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="cs.seopack">
 
   <include package="z3c.jbot" file="meta.zcml" />
@@ -34,6 +35,16 @@
       />
 
   <browser:viewlet
+      for="*"
+      name="cs.seopack.noindex"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+      class=".noindex.NoIndex"
+      template="noindex.pt"
+      permission="zope2.View"
+      />
+
+  <browser:viewlet
+      zcml:condition="not-have plone-43"
       for="*"
       name="cs.seopack.canonical"
       manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"      
