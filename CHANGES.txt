@@ -1,11 +1,14 @@
 Changelog
 =========
 
-1.1()
+1.1 (2013-11-18)
 -----------------------
--Added <meta name="robots" value="noindex,follow" /> for the default pages
--Added zcml:condition="not-have plone-43" for canonical viewlet
- [libargutxi]
+- Added <meta name="robots" value="noindex,follow" /> for the default pages
+  [libargutxi]
+
+- Added zcml:condition="not-have plone-43" for canonical viewlet
+  [libargutxi]
+
 
 1.0.3 (2012/09/10)
 -----------------------

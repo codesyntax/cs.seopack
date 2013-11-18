@@ -7,7 +7,7 @@ setup(name='cs.seopack',
       version=version,
       description="Some viewlets to do SEO work in Plone sites",
       long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+                       open("CHANGES.txt").read(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
