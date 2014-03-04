@@ -38,7 +38,8 @@ class CanonicalView(BrowserView):
             qs = self.request.get('QUERY_STRING', '')
             if qs:
                 url = url + '?' + qs
-        
+        if "/search" in url:
+            return url.split('?')[0]
         return url
 
     def batch_url(self):

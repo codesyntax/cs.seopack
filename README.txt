@@ -21,7 +21,12 @@ This product adds some viewlet to improve SEO in Plone sites:
         - yoursite.com/@@search?SearchableText=query -> yoursite.com/@@search?SearchableText=query
         - yoursite.com/folder1/folder_listing -> yoursite.com/folder1/folder_listing
 
+    - Customize canonical url of search template:
+
+      	- yoursite.com/@@search?SearchableText=query -> yoursite.com/@@search
+
  - Customized batching template to create batching base urls based on canonical urls.
+
 
 Tested with Plone 4.2.x. It should work all previous Plone 4 versions, but it's untested. 
 
